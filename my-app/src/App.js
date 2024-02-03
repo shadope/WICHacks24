@@ -8,7 +8,7 @@ function App() {
   return (
 
     <div className="App">
-   
+       <style>{'body { background-color: #FACDE5; }'}</style>
     </div>
   );
 }

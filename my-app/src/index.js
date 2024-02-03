@@ -7,6 +7,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import MainNavbar from './components/MainNavbar';
 import InputBox from './components/InputBox';
+import Dropdown from './components/Dropdown';
+import DisplayImage from './components/DisplayImage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,6 +16,9 @@ root.render(
     <Router>
       <MainNavbar/>
       <InputBox zip="Zip Code"/>
+      <Dropdown field="Color" one="Black" two="Blue" three="Green" four="Red" five="White"/>
+      <Dropdown field="Clothing" one="Jacket" two="Jeans" three="Sweater" four="T-shirt" five="Dress"/>
+      <DisplayImage sc="https://ftw.usatoday.com/wp-content/uploads/sites/90/2023/11/new-professor-layton-trailer.jpg?w=1000&h=600&crop=1"/>
     </Router>
   </React.StrictMode>
 );
