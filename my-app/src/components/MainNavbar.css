@@ -13,8 +13,5 @@
 
 @font-face {
     font-family: "Bartex";
-    src: url('font/Bartex-Regular.ttf') format('truetype');
+    src: url('../font/Bartex-Regular.ttf') format('truetype');
 }
-/* .NavBarBG{
-
-} */

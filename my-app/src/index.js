@@ -4,15 +4,16 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import MainNavbar from './components/MainNavbar';
+import InputBox from './components/InputBox';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
       <MainNavbar/>
+      <InputBox zip="Zip Code"/>
     </Router>
   </React.StrictMode>
 );
