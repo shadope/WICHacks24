@@ -17,6 +17,9 @@ function InputBox({ qfields, handleZipCode }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Zip Code:", e);
+
+    
+    
   };
 
   return (
