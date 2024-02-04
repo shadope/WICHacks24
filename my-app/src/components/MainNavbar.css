@@ -1,0 +1,17 @@
+#Nbar {
+    background-color:#e0218a;
+    border-radius:0;
+  }
+
+
+.Navbar_text{
+    font-size: 35px;
+    color: #ffffff;
+    font-family: "Bartex";
+}
+
+
+@font-face {
+    font-family: "Bartex";
+    src: url('../font/Bartex-Regular.ttf') format('truetype');
+}
