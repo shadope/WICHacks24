@@ -22,7 +22,7 @@ if __name__ == "__main__":
     loaded_model = load_model(model_file_path)
 
     # Replace 'input_array' with your actual input array for prediction
-    input_array = np.array([1, 2, 3, 4]).reshape(1, -1)
+    input_array = np.array([1, 2, 3]).reshape(1, -1)
 
     # Make predictions on the input array
     predictions = make_predictions(loaded_model, input_array)
