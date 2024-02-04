@@ -5,14 +5,19 @@ import './style.css'
 function InputBox(fields) {
     const [zipCode, setZipCode] = useState("");
     const [weatherResponse, setWeatherResponse] = useState(null);
+    const [clothesData, setClothesData] = useState(null);
 
     useEffect(() => {
         console.log(weatherResponse);
+
     }, [weatherResponse]);
 
     const handleSetZipCode = (e) => {
         setZipCode(e.target.value);
     };
+
+
+
 
     const handleSubmit = (e) => {
         e.preventDefault();

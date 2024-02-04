@@ -1,15 +1,23 @@
 import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 
-function Dropdown({ field, one, two, three, four, five }) {
+function Dropdown({ field, one, two, three, four, five, handleColorFilter,handleTypeFilter ,typeD  }) {
     const [drop, setDrop] = useState("");
 
     const handleSetDrop = (e) => {
         const selectedValue = e.target.value;
         setDrop(selectedValue);
+        console.log("Selected Color:",selectedValue); 
+        if(typeD == "Color")
+        {
+            handleColorFilter(selectedValue);
+        }  
+        else{
+            console.log("in drop down ", selectedValue);
+            handleTypeFilter(selectedValue);
+        }
+        
 
-        // Use the selectedValue directly instead of drop, as drop might not have been updated yet.
-        console.log("Drop:", selectedValue);
     };
 
     return (
