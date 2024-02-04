@@ -16,6 +16,9 @@ function HomePage() {
     const [chosenType, setChosenType] = useState("");
     const [chosenItem, setChosenItem] = useState("");
     const[chosenImage,setChosenImage] = useState("");
+    const[chosenZipText, setChosenZipText] = useState("");
+    const[chosenWelcome,setChosenWelcome]= useState("");
+    const [weatherResponse, setWeatherResponse] = useState(null);
 
     const colorDict = {"1":"Black","2":"Blue","3":"Green","4":"Red","5":"White"};
     const brandDict = {"1":"Under Armour","2":"Nike", "3":"Adidas","4":"Puma"};
@@ -41,7 +44,34 @@ function HomePage() {
     }
 }
 
-  
+const handleZipCode=(zipCode)=>{
+
+    fetch(`http://api.weatherapi.com/v1/forecast.json?key=ceb4db99cfc5455fa0634034240402&q=${zipCode}&days=2&aqi=no&alerts=no`, {
+        method: 'GET',
+    })
+    .then(response => response.json())
+    .then(data => {
+        setWeatherResponse(data);
+    })
+    .catch(error => {
+        console.error('Error', error);
+    });
+
+    console.log("weather ",weatherResponse);
+    // if(weather < 50)
+    // {
+    //     setChosenZipText("BUUUURRRR, the weather is forcasted to be ??? in ??? today, better bundle up!");
+    // }
+    // if(weather >= 50 && weather <=80)
+    // {
+    //     setChosenZipText("Quite Temperate weather indeed in ????, enjoy it while it lasts!");
+
+    // }
+    // if(weather >80)
+    // {
+    //     setChosenZipText("Whoooowhie! Its hot in ???, better wear breathable clothes!");
+    // }
+}  
 
    const handleTypeFilter =(ty)=>{
     console.log("ty beg: ",ty);
@@ -63,7 +93,7 @@ function HomePage() {
     return (
         <div>
             <MainNavbar />
-            <InputBox zip="Zip Code" />
+            <InputBox zip="Zip Code" handleZipCode={handleZipCode} />
             <Dropdown field="Color" one="Black" two="Blue" three="Green" four="Red" five="White" handleColorFilter={handleColorFilter} typeD ="Color"  />
             <Dropdown field="Clothing" one="Jacket" two="Jeans" three="Sweater" four="T-shirt" five="Dress" handleTypeFilter={handleTypeFilter} typeD="Typer"/>
             <DisplayImage sc={chosenImage} />
