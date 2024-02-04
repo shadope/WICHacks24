@@ -7,18 +7,16 @@ function InputBox({ qfields, handleZipCode }) {
   const [weatherResponse, setWeatherResponse] = useState(null);
   const [clothesData, setClothesData] = useState(null);
 
-  useEffect(() => {
-    console.log(weatherResponse);
-  }, [weatherResponse]);
+ 
 
   const handleSetZipCode = (e) => {
     setZipCode(e.target.value);
+    
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleZipCode(e);
-    console.log("Zip Code:", zipCode);
+    console.log("Zip Code:", e);
   };
 
   return (
@@ -26,7 +24,7 @@ function InputBox({ qfields, handleZipCode }) {
       <br />
       <Form.Group className="mb-3 col-1 ">
         <div className="row m-3">
-        <Form.Label className="feature-text">{qfields && qfields.zip}</Form.Label>
+        <Form.Label className="feature-text">Zip Code</Form.Label>  
           <Form.Control
             id="zip"
             size="sm"

@@ -46,6 +46,7 @@ function HomePage() {
 
 const handleZipCode=(zipCode)=>{
 
+    console.log("sip inda thing",zipCode);
     fetch(`http://api.weatherapi.com/v1/forecast.json?key=ceb4db99cfc5455fa0634034240402&q=${zipCode}&days=2&aqi=no&alerts=no`, {
         method: 'GET',
     })
